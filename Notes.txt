@@ -16,3 +16,6 @@ registrer the component by adding it in declarations array
 
 ng generate component newComp
 ng g c newComp
+
+// ['app-servers'] attribute selector   use <div app-servers></div>
+// .app-servers class selector   <div class="app-servers"></div>
