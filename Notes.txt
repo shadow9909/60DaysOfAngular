@@ -1,0 +1,18 @@
+server serves index.html(single page-SPA)- can be changed form angular.js
+
+selector in component.ts means the tag used to replace with the code of the
+component  
+
+bootstrap: [AppComponent]
+lists components used in index.html file
+
+main.ts->app.module.ts->app.component.ts
+
+app component is treated as the root component and all the 
+other components are added inside it(inside app.component.html)
+
+
+registrer the component by adding it in declarations array
+
+ng generate component newComp
+ng g c newComp
