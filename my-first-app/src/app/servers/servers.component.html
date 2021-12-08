@@ -1,5 +1,7 @@
 <label>Server Name</label>
-<input type="text" (input)="onUpdateServerName($event)" />
+<!-- <input type="text" (input)="onUpdateServerName($event)" /> -->
+
+<input type="text" [(ngModel)]="serverName" />
 <button
   class="btn btn-primary"
   [disabled]="!allowNewServer"
@@ -8,7 +10,19 @@
   Add Server
 </button>
 <!-- <p [innerText]="allowNewServer"></p> -->
-<p>{{ serverName }}</p>
+<!-- <p>{{ serverName }}</p> -->
 <p>{{ serverCreationStatus }}</p>
 <app-server></app-server>
 <app-server></app-server>
+
+<input type="text" [(ngModel)]="userName" />
+
+<button
+  class="btn btn-primary"
+  [disabled]="userLength()"
+  (click)="clearField($event)"
+>
+  Add
+</button>
+
+{{ userName }}
