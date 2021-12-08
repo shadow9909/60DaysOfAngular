@@ -9,20 +9,8 @@
 >
   Add Server
 </button>
-<!-- <p [innerText]="allowNewServer"></p> -->
-<!-- <p>{{ serverName }}</p> -->
-<p>{{ serverCreationStatus }}</p>
+
+<p *ngIf="serverCreated; else noServer">Server Name is {{ serverName }}</p>
+<ng-template #noServer><p>No server created till now</p></ng-template>
 <app-server></app-server>
 <app-server></app-server>
-
-<input type="text" [(ngModel)]="userName" />
-
-<button
-  class="btn btn-primary"
-  [disabled]="userLength()"
-  (click)="clearField($event)"
->
-  Add
-</button>
-
-{{ userName }}

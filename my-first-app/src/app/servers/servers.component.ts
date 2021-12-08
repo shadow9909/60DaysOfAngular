@@ -10,8 +10,7 @@ export class ServersComponent implements OnInit {
   allowNewServer = false;
   serverCreationStatus = 'No Server Created';
   serverName = '';
-  userName = '';
-  disabled = true;
+  serverCreated = false;
 
   constructor() {
     setTimeout(() => {
@@ -21,19 +20,12 @@ export class ServersComponent implements OnInit {
 
   onCreateServer() {
     this.serverCreationStatus = 'Server was created ' + this.serverName;
+    this.serverCreated = true;
   }
 
   onUpdateServerName(event: any) {
     console.log(event.target.value);
     this.serverName = event.target.value; // (<HTMLInputElement>event.target).value; explicit typecasting is advisable while using typescript
-  }
-
-  clearField(event: any) {
-    this.userName = '';
-  }
-
-  userLength() {
-    return this.userName.length == 0;
   }
 
   ngOnInit(): void {}
