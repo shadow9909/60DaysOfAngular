@@ -23,7 +23,7 @@ export class ServersComponent implements OnInit {
 
   onUpdateServerName(event: any) {
     console.log(event.target.value);
-    this.serverName = event.target.value;
+    this.serverName = event.target.value; // (<HTMLInputElement>event.target).value; explicit typecasting is advisable while using typescript
   }
 
   ngOnInit(): void {}
