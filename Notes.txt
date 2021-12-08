@@ -19,3 +19,14 @@ ng g c newComp
 
 // ['app-servers'] attribute selector   use <div app-servers></div>
 // .app-servers class selector   <div class="app-servers"></div>
+
+
+<h2 [ngStyle]="{ 'background-color': getColor() }"> change style using directives
+
+if directive    
+<p *ngIf="serverCreated; else noServer">Server Name is {{ serverName }}</p>
+<ng-template #noServer><p>No server created till now</p></ng-template>
+
+<h2 [ngStyle]="{ 'background-color': getColor() }" [ngClass]="{ online: true }">
+  server with id {{ serverId }} status is {{ getServerStatus() }}
+</h2>
