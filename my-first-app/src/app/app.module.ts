@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { ServerComponent } from './server/server.component';
 import { ServersComponent } from './servers/servers.component';
 import { WarningAlertComponent } from './WarningAlert/warning.component';
+import { ChallengeComponent } from './challengeComponent/challenge.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { WarningAlertComponent } from './WarningAlert/warning.component';
     ServersComponent,
     SuccessAlertComponent,
     WarningAlertComponent,
+    ChallengeComponent,
   ], //registering the new components so that angular knows about it
   imports: [BrowserModule, FormsModule],
   providers: [],

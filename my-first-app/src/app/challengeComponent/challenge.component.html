@@ -1,0 +1,11 @@
+<button class="btn btn-primary" (click)="util()">Display Details</button>
+<p [ngClass]="{ hide: flag === true }">Secret Password</p>
+
+<p *ngFor="let item of stamps">
+  <span
+    [ngStyle]="{ 'background-color': item > 5 ? 'blue' : '' }"
+    [ngClass]="{ white: item > 5 }"
+  >
+    {{ stamps }}
+  </span>
+</p>
