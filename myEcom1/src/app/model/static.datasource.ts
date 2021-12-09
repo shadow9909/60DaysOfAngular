@@ -1,7 +1,7 @@
-// import { Injectable } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { Product } from './product.model';
-// import { Observable, from } from 'rxjs';
-// @Injectable()
+import { Observable, from } from 'rxjs';
+@Injectable() // something which can be injected as a dependancy - Angular Service
 export class StaticDataSource {
   private products: Product[] = [
     new Product(1, 'Product 1', 'Category 1', 'Product 1 (Category 1)', 100),
@@ -20,7 +20,14 @@ export class StaticDataSource {
     new Product(14, 'Product 14', 'Category 3', 'Product 14 (Category 3)', 100),
     new Product(15, 'Product 15', 'Category 3', 'Product 15 (Category 3)', 100),
   ];
-  // getProducts(): Observable<Product[]> {
-  //   return from([this.products]);
-  // }
+
+  // published event function
+  getProducts(): Observable<Product[]> {
+    //
+    //<Product[]> => the entity in dependency array
+    // we need to monitor the product data continously
+    // it doesn't make sense here to write observable on static data
+    //
+    return from([this.products]);
+  }
 }

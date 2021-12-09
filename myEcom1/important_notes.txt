@@ -1,0 +1,61 @@
+model.module doesn't contains component
+BrowserModule is required in module.ts to render the component(render-a-factory)
+
+declarations: [StoreComponent], // register and launch is handled in feature modules
+
+No CRUD logic in component
+
+module is a black-box(private scoped)->how can they communicate
+StoreComponent(store.module.ts)
+
+constructor(private repository: ProductRepository) {} //ProductRepository is
+first searched in dependents module() then BrowserModule,
+
+services are by default shared across all the modules in nature- no need to explicitly export them
+
+first services are launched
+
+first dependency is launched and after that dependent
+
+local dependecy vs injected dependency?
+
+products(): Product[] {
+    return this.repository.getProducts();
+  }
+
+get products(): Product[] {    // ECMA 5 Accessor property - Autogetter & AutoSetter
+    return this.repository.getProducts();
+  }
+
+// whenever this.repository.getProducts() this executes 'get'(run) executes products()
+// 'get' chains execution
+write limited observables only when the result is uncertain
+
+//components used like element
+// directives are attributes
+
+ModelModule{
+  StoreModule{
+    AppModule{
+
+    }
+  }
+}
+
+
+ModelModule{ -yes
+        StoreModule{ -yes
+                         StoreComponent -> ProductRepository
+                        AppModule{-no
+                              -AppComponent -> <store></store>
+
+                            }
+
+        }
+}
+
+
+event and property binding -> views
+
+
+*->structural directive-> surrounds the structural template code
