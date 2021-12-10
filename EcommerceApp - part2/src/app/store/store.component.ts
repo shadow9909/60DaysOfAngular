@@ -56,7 +56,7 @@ export class StoreComponent {
 
   addProductToCart(product: Product) {
     console.log(product);
-    // this.cart.addLine(product);
-    // this.router.navigateByUrl("/cart"); // hashbang -> SRP - state in the browser url !
+    this.cart.addLine(product);
+    this.router.navigateByUrl("/cart"); // hashbang -> SRP - state in the browser url !
   }
 }

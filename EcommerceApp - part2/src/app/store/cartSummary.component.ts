@@ -3,8 +3,8 @@ import { Cart } from "../model/cart.model";
 
 @Component({
   selector: "cart-summary",
-  template: "<div>total items & price</div>",
+  templateUrl: "cartSummary.component.html",
 })
 export class CartSummaryComponent {
-  // constructor(public cart: Cart) { }
+  constructor(public cart: Cart) {}
 }

@@ -30,3 +30,40 @@ if directive
 <h2 [ngStyle]="{ 'background-color': getColor() }" [ngClass]="{ online: true }">
   server with id {{ serverId }} status is {{ getServerStatus() }}
 </h2>
+
+
+
+// no reusability, thats why not defining in the layers -cart.model
+// services with argument=>reverse flow
+service->cart.model.ts (dependency)
+structural directive->property binding
+
+Routing mechanism is the means to switch between Feature components, 
+which involves user interactions & BrowserURL state.
+BrowserURL state.   
+Step -1 - Hashbang: State changes in the BrowserURL state.  
+        DOM - <a href="#sale"> some text </a>  
+        Angular:  
+               non-template - router.navigateByUrl("/cart");
+               template -    routerLink="/store" 
+Step- 2 - Implicit - BrowserURL state is Eventstream/Observable 
+          publish - cart  
+Step3 - RouterStateTree - Subscribe to the event-"cart"
+,and deliver a feature component. 
+RouterModule.forRoot({
+  {
+      path:'cart',
+      component:'cartDetail' 
+  }
+  
+})
+Step 4- Routing placholder which serves the feature component that a RouterStateTree serves 
+        - <router-outlet>   
+Step -2 - BrowserURL State - Implicit 
+Step -3 RouterStateTree 
+Step-4 - Routing Placeholder   
+
+
+<form *ngIf="!orderSent" #form="ngForm" novalidate
+        (ngSubmit)="submitOrder(form)" class="m-2"> 
+        ngSubmit interceptive directive listens for form submit gives priority to form submit method and ensures the function is executed first
