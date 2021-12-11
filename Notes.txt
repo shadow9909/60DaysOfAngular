@@ -67,3 +67,16 @@ Step-4 - Routing Placeholder
 <form *ngIf="!orderSent" #form="ngForm" novalidate
         (ngSubmit)="submitOrder(form)" class="m-2"> 
         ngSubmit interceptive directive listens for form submit gives priority to form submit method and ensures the function is executed first
+
+
+
+web app
+
+native app
+
+PWA - better UI experience 
+
+CACHING
+angular PWA->internal html file service worker API
+js files can't be cached->we are not using data.js(use serverData.json)
+ng build --prod
